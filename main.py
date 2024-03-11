@@ -6,14 +6,13 @@ if __name__ == '__main__':
     while answer != 0:
         try:
             answer = int(input('На каком принтере напечатать документ? \n 1: Лазерный \n 2: Струйный \n 0: Выйти \n'))
+            doc = Document('Some text')
             if answer == 1:
                 laser = LaserPrinter()
-                doc = Document(laser)
-                print(doc.print_document())
+                print(doc.print_document(laser))
             if answer == 2:
                 ink = InkjetPrinter()
-                doc = Document(ink)
-                print(doc.print_document())
+                print(doc.print_document(ink))
         except ValueError:
             print('Введите число! \n')
 
